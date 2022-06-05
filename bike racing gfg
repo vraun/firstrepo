@@ -1,0 +1,21 @@
+#this code was solved using BINARY SEARCH
+class Solution:	
+	def buzzTime(self, N, M, L, H, A):
+	    low = 0
+	    high = max(L,M)
+	    ans = 0
+	    while (low<=high):
+	        mid = (low+high)//2
+	        fast = 0
+	        for i in range(N):
+          # this is done by altering the mid values and changing the multiplicative index
+	            if H[i] + A[i]*mid >=L :
+	                fast += H[i] + A[i]*mid
+	                print(fast, H[i] + A[i]*mid, mid, H[i], A[i], i)
+	        if fast>=M:
+	            ans = mid
+	            high = mid-1
+	        else:
+	            low = mid+1
+	    return ans
+	     
