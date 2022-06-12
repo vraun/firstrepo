@@ -1,0 +1,20 @@
+import math
+for _ in range(int(input())):
+    a,b = map(int, input().split())
+    r = abs(a-b)
+    c = 0
+    for i in range(1, int(math.sqrt(r))+1):
+        if r%i ==0:
+            if r/i == i:
+                c = c +1
+            else:
+                c = c +2
+    print(c)
+'''in this prblm {codechef : DISTGCD}, the number of factors for the difference of [a,b]
+helps in finding the solution of the answer, to be much more clearer understanding
+ for each differnt type of difference the no of factors for that diff is the solution .
+ the solution has a time complexity, in order to over come the time complexity int(sqrt(r))
+  is taken as range and as stated in line  8-9 if i**2 == r, then 1 is incremented, else
+  for every i that is allowed c is incremented by 2.'''
+    
+                
